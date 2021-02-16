@@ -49,7 +49,7 @@ def clean_csv(filepath_in, filepath_out_folder, filepath_out_name, conf):
         #print("Extracting From File")
         first = True
 
-        with open(filepath_out_folder + "\\" + filepath_out_name, 'w', newline = '') as new_file:        # ...and writing desired data into a temporary csv file
+        with open(os.path.join(filepath_out_folder, filepath_out_name), 'w', newline = '') as new_file:        # ...and writing desired data into a temporary csv file
             csv_writer = csv.writer(new_file)
             
             for line in csv_reader:                     # iterate through each row of the OpenFace file          
@@ -93,7 +93,7 @@ def merge_csv(folder):
     my_row = []
     
     try:
-        with open(folder + "\\MERGED.csv", 'w', newline = '') as new_file:
+        with open(os.path.join(folder, "MERGED.csv"), 'w', newline = '') as new_file:
             csv_writer = csv.writer(new_file)
             
             # for each csv in the folder
